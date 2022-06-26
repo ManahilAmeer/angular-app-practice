@@ -1,0 +1,42 @@
+<div>
+  <div class="form-box">
+    <form
+      novalidate
+      (ngSubmit)="checkUser()"
+      [formGroup]="loginForm"
+      class="k-form"
+    >
+      <fieldset>
+        <legend>{{ pageTitle }}</legend>
+        <kendo-formfield
+          ><kendo-floatinglabel text="E-mail">
+            <kendo-textbox
+              formControlName="email"
+            ></kendo-textbox> </kendo-floatinglabel
+        ></kendo-formfield>
+
+        <kendo-floatinglabel text="Password">
+          <kendo-textbox formControlName="password"></kendo-textbox>
+        </kendo-floatinglabel>
+        <!-- <input type="checkbox" #rememberMe kendoCheckBox>
+        <kendo-label for="rememberMe">Remember me</kendo-label > -->
+      </fieldset>
+
+      <button
+        kendoButton
+        class="submitButton"
+        [primary]="true"
+        (onclick)="checkUser()"
+      >
+        Login
+      </button>
+      <p class="forgotPassword">Forgot password?</p>
+      <div class="pane-content">
+        <p>New User? <a [routerLink]="['/signup']">Sign up</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

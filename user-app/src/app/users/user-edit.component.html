@@ -1,0 +1,38 @@
+<div>
+    <div class="form-box">
+      <form
+        novalidate
+        [formGroup]="editForm"
+        class="k-form"
+      >
+        <fieldset>
+          <legend>{{ pageTitle }}</legend>
+          
+          <kendo-formfield
+            ><kendo-label text="E-mail">
+              <kendo-textbox
+                formControlName="email"
+              ></kendo-textbox> </kendo-label
+          ></kendo-formfield>
+          <!-- {{log(editForm)}} -->
+          <kendo-label text="Password">
+            <kendo-textbox formControlName="password"></kendo-textbox>
+          </kendo-label>
+          <kendo-label text="Username">
+            <kendo-textbox formControlName="userName"></kendo-textbox>
+          </kendo-label>
+        </fieldset>
+        <div class="k-form-buttons">
+            <button kendoButton themeColor="primary" (click)="handleButton()">
+              {{buttonText}}
+            </button>
+            <button kendoButton (click)="deleteUser()" *ngIf="showDelButton">Delete</button>
+            <!-- <button kendoButton (cilck)="onBack()">Delete</button> -->
+            <button kendoButton (click)="onBack()">Cancel</button>
+          </div>
+      </form>
+    </div>
+    <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+  </div>

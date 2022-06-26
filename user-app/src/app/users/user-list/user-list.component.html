@@ -1,0 +1,43 @@
+<div class="k-form-buttons">
+  <button kendoButton themeColor="primary" [routerLink]="['/users', 0,'edit']">
+    Add new User
+  </button>
+  <!-- <button kendoButton >Cancel</button> -->
+</div>
+<!-- <kendo-menu [items]="items"> </kendo-menu> -->
+<kendo-grid
+  kendoGridSelectBy="id"
+  [kendoGridBinding]="users"
+  [pageSize]="10"
+  [pageable]="true"
+  [sortable]="true"
+  [reorderable]="true"
+  [resizable]="true"
+  [columnMenu]="{ filter: true }"
+>
+  <!-- <kendo-grid-column-group title="Employee" [columnMenu]="false"> -->
+  <kendo-grid-column field="userName" title="User Name"
+    ><ng-template kendoGridCellTemplate let-dataItem
+      ><a [routerLink]="['/users', dataItem.id]">{{
+        dataItem.userName
+      }}</a></ng-template
+    ></kendo-grid-column
+  >
+  <kendo-grid-column field="email" title="E-mail"></kendo-grid-column>
+  <ng-template kendoGridCellTemplate>
+    <button kendoButton>Default</button>
+  </ng-template>
+  <kendo-grid-column field="id" title="Edit">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button
+        kendoButton
+        icon="edit"
+        fillMode="flat"
+        [routerLink]="['/users', dataItem.id,'edit']"
+      >
+        Edit
+      </button>
+    </ng-template>
+  </kendo-grid-column>
+  <!-- </kendo-grid-column-group> --></kendo-grid
+>

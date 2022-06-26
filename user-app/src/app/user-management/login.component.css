@@ -1,0 +1,35 @@
+.k-form{
+    background: rgb(225, 224, 248);
+    padding: 22px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+.form-box,.pane-content{
+    display: flex;
+    justify-content: center;
+}
+.k-radio-label{
+    padding: 5px;
+}
+.submitButton{
+    margin-top: 20px;
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+.k-label{
+    margin-top: 10px;
+}
+.k-form kendo-label{
+    display: inline-block;
+    padding-left: 8px;
+}
+.k-form{
+    width: 344px;
+}
+.forgotPassword{
+    align-self: right;
+}
+.alert{
+    margin: 10px;
+}

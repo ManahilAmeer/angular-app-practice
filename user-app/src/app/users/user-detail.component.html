@@ -1,0 +1,26 @@
+
+<kendo-tilelayout [columns]="1">
+  <kendo-tilelayout-item [col]="1" [title]="user.userName">
+    <kendo-tilelayout-item-body>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-2">Name:</div>
+            <div class="col-md-4">{{ user.userName }}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">E-mail:</div>
+            <div class="col-md-4">{{ user.email | lowercase }}</div>
+          </div>
+        </div>
+      </div>
+    </kendo-tilelayout-item-body>
+    <kendo-card-footer>
+        <button kendoButton  class='btn btn-outline-secondary'
+                style='width:80px'
+                (click)='onBack()'>
+          <i class='fa fa-chevron-left'></i> Back
+        </button>
+      </kendo-card-footer>
+  </kendo-tilelayout-item>
+</kendo-tilelayout>
