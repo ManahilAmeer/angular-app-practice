@@ -4,13 +4,10 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
 } from '@angular/router';
-
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { UsersService } from './users.service';
 import { UserResolved } from '../user-management/user';
-
-// import { ProductService } from './product.service';
 @Injectable({
   providedIn: 'root',
 })

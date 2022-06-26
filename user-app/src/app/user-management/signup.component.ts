@@ -9,6 +9,7 @@ import { UsersService } from '../users/users.service';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
+  show:boolean=true;
   pageTitle: string = 'Sign Up Form';
   errorMessage:string=""
   signupForm: FormGroup;
@@ -53,5 +54,8 @@ export class SignupComponent implements OnInit {
     else{
       this.errorMessage = 'Please enter correct credentials.';
     }
+  }
+  showHidePass():void{
+    this.show=!this.show
   }
 }

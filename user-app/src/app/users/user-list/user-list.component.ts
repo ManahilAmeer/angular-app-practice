@@ -19,17 +19,13 @@ export class UserListComponent implements OnInit {
   items:any[]=[
     { text: "User list"},{
       text:"Add user"
-      
     }
   ]
-  // edit = true;
-  // add = false;
   users: User[] = [];
   errorMessage: string;
   constructor(
     private userService: UsersService
   ) {}
-
   ngOnInit(): void {
     this.getUsers();
   }
@@ -45,7 +41,5 @@ export class UserListComponent implements OnInit {
     this.user.name = "";
     this.user.email = "";
     this.user.id = null;
-    // this.edit = true;
-    // this.add = false;
   }
 }

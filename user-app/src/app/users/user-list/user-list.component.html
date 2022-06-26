@@ -2,9 +2,8 @@
   <button kendoButton themeColor="primary" [routerLink]="['/users', 0,'edit']">
     Add new User
   </button>
-  <!-- <button kendoButton >Cancel</button> -->
+  <button kendoButton [routerLink]="['/login']">Log Out</button>
 </div>
-<!-- <kendo-menu [items]="items"> </kendo-menu> -->
 <kendo-grid
   kendoGridSelectBy="id"
   [kendoGridBinding]="users"
@@ -15,7 +14,6 @@
   [resizable]="true"
   [columnMenu]="{ filter: true }"
 >
-  <!-- <kendo-grid-column-group title="Employee" [columnMenu]="false"> -->
   <kendo-grid-column field="userName" title="User Name"
     ><ng-template kendoGridCellTemplate let-dataItem
       ><a [routerLink]="['/users', dataItem.id]">{{
@@ -39,5 +37,5 @@
       </button>
     </ng-template>
   </kendo-grid-column>
-  <!-- </kendo-grid-column-group> --></kendo-grid
+</kendo-grid
 >

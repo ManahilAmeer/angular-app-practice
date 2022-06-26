@@ -31,7 +31,6 @@ export class UsersService {
     return this.getUsers().pipe(
       map((users: User[]) => users.find((p) => p.email === email))
     );
-    
   }
   craeteEmptyUser(): User {
     return {
@@ -42,7 +41,6 @@ export class UsersService {
     };
   }
   addUser(user: User): Observable<User> {
-    // user.id=null;
     console.log(user);
     return this.http.post<User>(this.usersUrl, user).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -52,7 +50,6 @@ export class UsersService {
     );
   }
   editUser(user: User): Observable<any> {
-    // console.log(user);
     return this.http.put(this.usersUrl + user.id, user).pipe(
       tap((data) => {
         console.log('User updated: ' + user.userName);

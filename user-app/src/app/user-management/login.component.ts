@@ -9,6 +9,8 @@ import { UsersService } from '../users/users.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  password:string;
+  show:boolean=true;
   loginForm: FormGroup;
   pageTitle: string = 'User Login';
   users: User[] = [];
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.formModel = new User(0, '', '', '');
   }
   ngOnInit(): void {
+    this.password='password';
     this.loginForm = this.fb.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', [Validators.required]],
@@ -53,5 +56,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.errorMessage = 'Please enter correct credentials.';
     }
+  }
+  showHidePass():void{
+    this.show=!this.show
   }
 }

@@ -7,14 +7,12 @@
       >
         <fieldset>
           <legend>{{ pageTitle }}</legend>
-          
           <kendo-formfield
             ><kendo-label text="E-mail">
               <kendo-textbox
                 formControlName="email"
               ></kendo-textbox> </kendo-label
           ></kendo-formfield>
-          <!-- {{log(editForm)}} -->
           <kendo-label text="Password">
             <kendo-textbox formControlName="password"></kendo-textbox>
           </kendo-label>
@@ -27,7 +25,6 @@
               {{buttonText}}
             </button>
             <button kendoButton (click)="deleteUser()" *ngIf="showDelButton">Delete</button>
-            <!-- <button kendoButton (cilck)="onBack()">Delete</button> -->
             <button kendoButton (click)="onBack()">Cancel</button>
           </div>
       </form>

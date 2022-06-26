@@ -6,10 +6,6 @@
         [formGroup]="signupForm"
         class="k-form"
       >
-      <!-- <kendo-avatar
-            initials="EG"
-            shape="circle"
-          ></kendo-avatar> -->
         <fieldset>
           <legend>{{ pageTitle }}</legend>
           <kendo-formfield
@@ -18,17 +14,17 @@
                 formControlName="email"
               ></kendo-textbox> </kendo-floatinglabel
           ></kendo-formfield>
-  
           <kendo-floatinglabel text="Password">
-            <kendo-textbox formControlName="password"></kendo-textbox>
+            <input formControlName="password" [type]="show?'password':'text'" kendoTextBox/>
+            <button kendoButton class="eyebutton"  (click)="showHidePass()">
+              <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+              <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+            </button>
           </kendo-floatinglabel>
           <kendo-floatinglabel text="Username">
             <kendo-textbox formControlName="userName"></kendo-textbox>
           </kendo-floatinglabel>
-          <!-- <input type="checkbox" #rememberMe kendoCheckBox>
-          <kendo-label for="rememberMe">Remember me</kendo-label > -->
         </fieldset>
-  
         <button
           kendoButton
           class="submitButton"
@@ -37,7 +33,6 @@
         >
           Sign Up
         </button>
-        
         <div class="pane-content">
           <p>Already a user? <a [routerLink]="['/login']">Login</a></p>
         </div>
@@ -47,7 +42,3 @@
        *ngIf="errorMessage">{{errorMessage}}
   </div>
   </div>
-  <!-- <br />Dirty: {{ userForm.dirty }} <br />Touched: {{ userForm.touched }}
-  <br />Valid: {{ userForm.valid }} <br />Value: -->
-  <!-- {{ userForm.value | json }} -->
-  
