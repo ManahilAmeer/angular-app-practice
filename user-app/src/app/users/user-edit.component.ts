@@ -25,11 +25,12 @@ export class UserEditComponent implements OnInit {
     private usersService: UsersService
   ) {}
   ngOnInit(): void {
-    this.route.data.subscribe((data) => {
-      const resolvedUser: UserResolved = data['user'];
+    // console.log()
+    this.route.data.subscribe((data)=>{
+      const resolvedUser: UserResolved = data['resolvedData'];
       this.errorMessage = resolvedUser.error;
       this.onUserFetched(resolvedUser.user);
-    });
+    })
     this.editForm = this.fb.group({
       id: [],
       email: ['', [Validators.email, Validators.required]],

@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DataBindingDirective } from '@progress/kendo-angular-grid';
 import { User } from 'src/app/user-management/user';
 import { UsersService } from '../users.service';

@@ -18,6 +18,7 @@ export class UserResolver implements Resolve<UserResolved> {
     state: RouterStateSnapshot
   ): Observable<UserResolved> {
     const id = route.paramMap.get('id');
+    console.log(id)
     if (isNaN(Number(id))) {
       const errMessage = `User id is not a Numbere: ${id}`;
       console.error(errMessage);

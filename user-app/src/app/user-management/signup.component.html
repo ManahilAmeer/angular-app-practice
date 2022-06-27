@@ -2,7 +2,6 @@
     <div class="form-box">
       <form
         novalidate
-        (ngSubmit)="onSubmit()"
         [formGroup]="signupForm"
         class="k-form"
       >
@@ -29,7 +28,7 @@
           kendoButton
           class="submitButton"
           [primary]="true"
-          (onclick)="onSubmit()"
+          (click)="onSubmit()"
         >
           Sign Up
         </button>

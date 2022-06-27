@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
         this.userService.getUserByEmail(this.loginForm.value.email).subscribe({
           next: (user) => (this.user = user),
         });
-        // console.log(this.user)
         if (this.user.password === this.loginForm.value.password) {
           this.router.navigate(['/users']);
         } else {
