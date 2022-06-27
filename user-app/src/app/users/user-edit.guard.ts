@@ -22,8 +22,7 @@ export class UserEditGuard implements CanDeactivate<unknown> {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      console.log(component.isDirty)
-    if (component.isDirty) {
+    if (component.editForm.dirty) {
       console.log()
       const userName = component.user.userName || 'New User';
       return confirm(`Navigate away and lose all changes to ${userName}?`);

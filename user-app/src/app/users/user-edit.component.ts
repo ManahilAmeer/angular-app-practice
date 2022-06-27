@@ -13,11 +13,10 @@ export class UserEditComponent implements OnInit {
   buttonText: string = '';
   showDelButton: boolean = false;
   user: User;
+  updatedUser:User;
   errorMessage: string;
   editForm: FormGroup;
-  get isDirty(): boolean {
-    return JSON.stringify(this.user) === JSON.stringify(this.editForm.value);
-  }
+ 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -79,8 +78,8 @@ export class UserEditComponent implements OnInit {
     }
   }
   editUser(): void {
-    if (this.user.id === 0) {
-    } else {
+    //  else {
+      this.updatedUser=this.editForm.value;
       this.usersService.editUser(this.editForm.value).subscribe(
         (res) => {
         },
@@ -88,9 +87,11 @@ export class UserEditComponent implements OnInit {
           console.log('handle error');
           console.log(err);
         }
-      );
-      this.onBack();
-    }
+        );
+        console.log(this.updatedUser);
+        console.log();
+        this.onBack();
+      // }
   }
   deleteUser(): void {
     if (
@@ -109,6 +110,7 @@ export class UserEditComponent implements OnInit {
     }
   }
   onBack(): void {
+    this.editForm.reset()
     this.router.navigate(['/users']);
   }
   log(data) {

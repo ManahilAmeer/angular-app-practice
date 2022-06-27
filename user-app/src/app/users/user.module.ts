@@ -13,6 +13,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { RouterModule } from '@angular/router';
 import { UserResolver } from './user-resolver.service';
+import { UserEditGuard } from './user-edit.guard';
 
 @NgModule({
   declarations: [UserListComponent, UserEditComponent, UserDetailComponent],
@@ -31,6 +32,7 @@ import { UserResolver } from './user-resolver.service';
             path: ':id/edit',
             component: UserEditComponent,
             resolve: { resolvedData: UserResolver },
+            canDeactivate:[UserEditGuard]
           },
         ],
       },
